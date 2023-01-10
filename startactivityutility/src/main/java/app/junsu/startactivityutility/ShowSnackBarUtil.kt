@@ -1,13 +1,13 @@
 package app.junsu.startactivityutility
 
-import android.view.ViewGroup
+import android.view.View
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.snackbar.Snackbar.LENGTH_LONG
 import com.google.android.material.snackbar.Snackbar.LENGTH_SHORT
 
 object ShowSnackBarUtil {
 
-    private fun <V : ViewGroup> V.showSnackBar(text: String, length: Int) {
+    private fun <V : View> V.showSnackBar(text: String, length: Int) {
         Snackbar.make(
             /* view = */
             this,
@@ -18,14 +18,14 @@ object ShowSnackBarUtil {
         ).show()
     }
 
-    fun <V : ViewGroup> V.showShortSnackBar(text: String) {
+    fun <V : View> V.showShortSnackBar(text: String) {
         showSnackBar(
             text = text,
             length = LENGTH_SHORT,
         )
     }
 
-    fun <V : ViewGroup> V.showLongSnackBar(text: String) {
+    fun <V : View> V.showLongSnackBar(text: String) {
         showSnackBar(
             text = text,
             length = LENGTH_LONG,
